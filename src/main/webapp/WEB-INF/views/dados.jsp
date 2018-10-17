@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
@@ -19,11 +19,29 @@
 <body>
 <div class="container">
 
-    <h2>Hello ${name}!</h2>
+    <h2>Dados</h2>
+
+    <form:form method="post" action="/confirmacao" modelAttribute="formulario">
+
+        <form:hidden path="json"></form:hidden>
+
+        <input type="submit" />
+
+    </form:form>
+
 
 </div>
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).on('ready', function(){
+        $.get( "ola", function( data ) {
+            console.log( "Load was performed." );
+        });
+    });
+</script>
+
 </body>
 </html>

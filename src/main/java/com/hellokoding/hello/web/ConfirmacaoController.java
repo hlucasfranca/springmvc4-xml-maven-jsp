@@ -37,7 +37,4 @@ public class ConfirmacaoController {
         return "confirmacao";
     }
 
-
-
-
 }

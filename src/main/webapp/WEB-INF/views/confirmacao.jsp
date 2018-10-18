@@ -19,38 +19,14 @@
 <body>
 <div class="container">
 
-    <h2>Dados</h2>
+    <h2>Confirmação</h2>
 
-    <form:form method="post" action="/confirmacao" modelAttribute="formulario" >
-
-        <form:input path="texto"></form:input>
-
-
-        <form:hidden path="objetoUm"></form:hidden>
-
-        <form:hidden path="objetoDois"></form:hidden>
-
-        <form:hidden path="objetoTres"></form:hidden>
-
-        <form:hidden path="objetoQuatro"></form:hidden>
-
-        <input type="submit" />
-
-    </form:form>
 
 
 </div>
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
-
-<script>
-    $(document).on('ready', function(){
-        $.get( "ola", function( data ) {
-            console.log( "Load was performed." );
-        });
-    });
-</script>
 
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
@@ -23,16 +24,17 @@
 
     <form:form method="post" action="/confirmacao" modelAttribute="formulario" >
 
-        <form:input path="texto"></form:input>
+        <spring:eval expression="formulario.texto?.length()" />
+
+        <form:input path="texto" maxlength="10" teste="sss"/>
 
 
-        <form:hidden path="objetoUm"></form:hidden>
 
-        <form:hidden path="objetoDois"></form:hidden>
 
-        <form:hidden path="objetoTres"></form:hidden>
-
-        <form:hidden path="objetoQuatro"></form:hidden>
+        <form:hidden path="objetoUm" />
+        <form:hidden path="objetoDois" />
+        <form:hidden path="objetoTres" />
+        <form:hidden path="objetoQuatro" />
 
         <input type="submit" />
 

@@ -10,7 +10,7 @@ public class Formulario {
 
     private String objetoQuatro;
 
-    private String texto = null;
+    private String texto = "Form";
 
     public String getObjetoUm() {
         return objetoUm;

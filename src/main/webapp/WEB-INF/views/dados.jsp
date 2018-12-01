@@ -1,8 +1,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ex" tagdir="/WEB-INF/tags" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<spring:eval expression="formulario.texto?.length()" var="comprimento" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +25,28 @@
 
     <h2>Dados</h2>
 
+
+
     <form:form method="post" action="/confirmacao" modelAttribute="formulario" >
 
-        <spring:eval expression="formulario.texto?.length()" />
+        <div>
+            <ex:exemplo nome="${comprimento}" />
+        </div>
+
+        <div>
+            <spring:eval expression="2 == 1" />
+        </div>
+
+        <div>
+            <spring:eval expression="2 == 2" />
+        </div>
+
+        <div>
+            <spring:eval expression="'Texto do form: ' + formulario.texto" />
+        </div>
+
 
         <form:input path="texto" maxlength="10" teste="sss"/>
-
-
-
 
         <form:hidden path="objetoUm" />
         <form:hidden path="objetoDois" />
